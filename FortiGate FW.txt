@@ -1,0 +1,81 @@
+-----------------------------Fortinet Firewall- --------------------------------------------------------------------------------------
+get system interface physical 
+get system interface physical port1
+diagnose hardware sysinfo conserve          to check hardware info
+
+To configure interfaces
+#config system interface
+Fortigate(interface)# show         To see all interfaces
+Fortigate(interface)# edit port1
+Fortigate(port1)# set mode static    to set as static from dynmic
+Fortigate(port1)# set ip 172.16.5.19 255.255.255.0
+
+----------------------------------------------------Ping------------------------------------------------------------
+Set the source IP/interface:
+#execute ping-options source 172.16.5.215
+#execute ping 172.16.5.16
+
+Set the number of ping packets:
+#execute ping-options repeat-count 5
+
+Set packet size
+execute ping-options data-size 1400
+
+
+View current ping options:
+#execute ping-options view-settings
+
+Reset ping options to default:
+#execute ping-options reset
+
+---------------------------------Routing-----------------------------------------------
+#get router info routing-table all                          To see routing table
+
+
+-------------------------------------------------------------------------------------------------
+#diaganose debug rating                     To verify the connection to fortiguard servers
+#diagonose autoupdate versions              Fortiguard databases/engines installed
+
+#config log disk setting                    To enable disk loggin
+set status enable
+set maximum-log-age <Int>                    By default, logs older than seven days are deleted from the disk. This value is configurable.
+
+
+-----------------------Fortianalyzer logging------------------------------------------------
+Reliable loggin and OFTPS
+
+#config log fortianalyzer setting
+set status enable
+set enc-algorithm [high-med | high | low ]
+set reliable enable 
+end
+
+Configure loggin options (store and upload)
+#configure log fortianalyzer setting
+  set upload option[store-and-upload | realtime/1-minute/5-minute]
+
+---------------------------------------View logs in CLI--------------------------------
+#execute log filter
+#execute log display
+
+Use in block policy to block all incoming traffic except VIPs, set to disalbe
+#Config firewall policy
+#edit <policy ID>
+#set match-vip <enable \ disable>
+#next
+#end
+------------------------Testing LDAP & RADIUS QUERY on CLI-----------------------------------------------------------
+#diaganose test authserver ldap <server_name user_name password>
+
+#diaganose test authserver radius <server_name scheme user_name password>
+
+----------------------------------------------------------------------------------------
+To troubleshoot further common antivirus issues, you can check the information provided by the following commands:
+
+•get system performance status: Displays statistics for the last one minute.
+
+•diagnose antivirus database-info: Displays current antivirus database information.
+
+•diagnose autoupdate versions: Displays current antivirus engine and signature versions.
+
+•diagnose antivirus test "get scantime": Displays scan times for infected files.
