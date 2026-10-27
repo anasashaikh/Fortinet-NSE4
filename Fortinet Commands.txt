@@ -79,3 +79,30 @@ To troubleshoot further common antivirus issues, you can check the information p
 •diagnose autoupdate versions: Displays current antivirus engine and signature versions.
 
 •diagnose antivirus test "get scantime": Displays scan times for infected files.
+
+
+---------------------------------------Troubleshoot IPS high CPU usage-------------------
+Continious high cpu use by the ips engine is not normal, and you should investigate it, use the following command
+along with the displayed options to troubleshoot the issue.
+
+5. if there are high cpu usage by the ips engine, use this option to isolate where the problem might be, this option enables ips bypass mode, the ips engine is still running but not ispecting traffic.
+If cpu usage decreases after that, it usually indicates that the volume of inspected traffic is too high for fortigate.
+If cpu remains high after you enable ips bypass mode, it usually indicates a problem in the ips engine, which you must report to fortinet support.
+
+2. you can disable the ips engine completely using option 2, to restore ips inspection of traffic after you finish troubleshooting, use option 2 again.
+
+1. Select this option to check the status of the IPS engines any time.
+
+99. To restart all ips engines use this option, all ips related processes restarts.
+
+#diagnose test application ipsmonitor
+
+ips engine test usage:
+1. Display IPS engine information
+2. Toggle ips engine enable/disable status
+5. Toggle bypass status   
+99. Restart all ips engine and monitor
+
+
+
+
