@@ -106,5 +106,5 @@ ips engine test usage:
 ---------------------------FSSO debug command-----------------------------------------------
 #diagnose debug authd fsso list      to display the list of fsso ussers currently logged in
 
-
+#diagnose debug authd fsso server-status    check connectivity between collector agent and fortigate
 
