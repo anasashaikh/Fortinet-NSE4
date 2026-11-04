@@ -69,7 +69,7 @@ Use in block policy to block all incoming traffic except VIPs, set to disalbe
 
 #diaganose test authserver radius <server_name scheme user_name password>
 
-----------------------------------------------------------------------------------------
+----------------------------------------Antivirus------------------------------------------------
 To troubleshoot further common antivirus issues, you can check the information provided by the following commands:
 
 •get system performance status: Displays statistics for the last one minute.
@@ -103,6 +103,8 @@ ips engine test usage:
 5. Toggle bypass status   
 99. Restart all ips engine and monitor
 
+---------------------------FSSO debug command-----------------------------------------------
+#diagnose debug authd fsso list      to display the list of fsso ussers currently logged in
 
 
 
