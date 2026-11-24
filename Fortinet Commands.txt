@@ -107,4 +107,13 @@ ips engine test usage:
 #diagnose debug authd fsso list      to display the list of fsso ussers currently logged in
 
 #diagnose debug authd fsso server-status    check connectivity between collector agent and fortigate
+ 
+----------------------------- VPN -------------------------------------------------------
+#diagnose VPN tunnel ?
+
+down    shutdown tunnel
+up      activate tunnel
+list    list all tunnel
+flush   flush tunnel SAs
+
 
