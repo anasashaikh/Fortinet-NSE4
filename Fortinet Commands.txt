@@ -119,3 +119,7 @@ flush   flush tunnel SAs
 #get vpn ipsec tunnel details
 the output shows traffic counters, negotiated quick mode selectors, and negotiated encryption, authentication and keys.
 
+#diagnose vpn ike gateway list name ToHQ/<vpn name>    To see the details about the tunnel
+
+#diagnose vpn ike gateway clear <name>    Closes a phase 1
+Be careful when using this command because it has a global effect. it means that running it without specifying a phase 1 name results in all phases 1s of all VDOMs being cleared.
