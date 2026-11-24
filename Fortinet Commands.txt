@@ -116,4 +116,6 @@ up      activate tunnel
 list    list all tunnel
 flush   flush tunnel SAs
 
+#get vpn ipsec tunnel details
+the output shows traffic counters, negotiated quick mode selectors, and negotiated encryption, authentication and keys.
 
